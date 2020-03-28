@@ -8,10 +8,10 @@ Technologies Used:
 - Angular 8 & Typescript
 - Spring Boot & Java
 
-To Run:
-- Download both projects locally
-- Run spring boot project to start up localhost:8080 api and local h2 database
-- Run angular project to start up localhost:4200 front end client
+To Run Locally:
+- Download both projects
+- Run spring boot project (employee) to start up localhost:8080 api and local h2 database
+- Run angular project (employee-client) to start up localhost:4200 front end client
 
 Screenshots:
 
