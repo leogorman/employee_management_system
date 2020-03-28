@@ -1,5 +1,15 @@
 # Employee Management System
 
+Screenshots:
+![](screenshots/sc1.PNG)
+Add New Employee
+
+![](screenshots/sc2.PNG)
+View Employee List
+
+![](screenshots/sc3.PNG)
+View/Edit Employee
+
 Developed via two seperate projects:
 - Angular 8 project for front end client
 - Spring boot project for back end api
@@ -12,8 +22,6 @@ To Run Locally:
 - Download both projects
 - Run spring boot project (employee) to start up localhost:8080 api and local h2 database
 - Run angular project (employee-client) to start up localhost:4200 front end client
-
-Screenshots:
 
 To Do:
 - Add additional fields to Employee model (image, dob, start date, department etc..)
