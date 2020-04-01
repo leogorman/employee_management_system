@@ -23,9 +23,9 @@ View Employee List
 View/Edit Employee
 
 To Do:
-~~- Deploy to cloud platform (AWS/Heroku/Firebase) & update readme with new link~~ 
-~~Add additional fields to Employee model (start date, department etc..)~~
-~~- Add additional fields to employee profile ~~
+- ~~Deploy to cloud platform (AWS/Heroku/Firebase) & update readme with new link~~ 
+- ~~Add additional fields to Employee model (start date, department etc..)~~
+- ~~Add additional fields to employee profile~~
 - Add ability to update employee details
 - Search for employees by name/employee id/department/email
 - Sort employees by name/dob/id/department
