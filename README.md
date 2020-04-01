@@ -16,9 +16,11 @@ To Do:
 - ~~Deploy to cloud platform (AWS/Heroku/Firebase) & update readme with new link~~ 
 - ~~Add additional fields to Employee model (start date, department etc..)~~
 - ~~Add additional fields to employee profile~~
+- ~~Add Angular Material design to project~~ 
 - Add ability to update employee details
-- Search for employees by name/employee id/department/email
-- Sort employees by name/dob/id/department
+- Auto refresh data when new employee created
+- Search for employees by various field(name/employee id/department etc..)
+- Sort employees by various fields
 - Add form field restrictions when creating new record
 - Add user login system
 
