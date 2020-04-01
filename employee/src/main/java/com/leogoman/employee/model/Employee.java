@@ -1,69 +1,102 @@
 package com.leogoman.employee.model;
 
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "employees")
 public class Employee {
 
-    private long id;
+    private int id;
     private String firstName;
     private String lastName;
-    private String emailId;
+    private String email;
+    private String phone;
+    private String taxNumber;
+    private String employmentType;
+    private String department;
+    private String role;
 
     public Employee() {
 
     }
 
-    public Employee(String firstName, String lastName, String emailId) {
+    public Employee(int id, String firstName, String lastName, String email, String phone, String taxNumber, String employmentType, String department, String role) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.emailId = emailId;
+        this.email = email;
+        this.phone = phone;
+        this.taxNumber = taxNumber;
+        this.employmentType = employmentType;
+        this.department = department;
+        this.role = role;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(long id) {
+
+    public void setId(int id) {
         this.id = id;
     }
 
-    @Column(name = "first_name", nullable = false)
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    @Column(name = "last_name", nullable = false)
     public String getLastName() {
         return lastName;
     }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    @Column(name = "email_address", nullable = false)
-    public String getEmailId() {
-        return emailId;
-    }
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
+    public String getEmail() {
+        return email;
     }
 
-    @Override
-    public String toString() {
-        return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId=" + emailId
-                + "]";
+    public void setEmail(String email) {
+        this.email = email;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getTaxNumber() {
+        return taxNumber;
+    }
+
+    public void setTaxNumber(String taxNumber) {
+        this.taxNumber = taxNumber;
+    }
+
+    public String getEmploymentType() {
+        return employmentType;
+    }
+
+    public void setEmploymentType(String employmentType) {
+        this.employmentType = employmentType;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }

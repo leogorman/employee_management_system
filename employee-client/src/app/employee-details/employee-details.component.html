@@ -1,7 +1,7 @@
-<h2>Employee Details</h2>
+<h2 style="text-align: center">Employee Details</h2>
 
 <hr/>
-<div *ngIf="employee">
+<div *ngIf="employee" style="text-align: center">
   <div>
     <label><b>First Name: </b></label> {{employee.firstName}}
   </div>
@@ -9,10 +9,28 @@
     <label><b>Last Name: </b></label> {{employee.lastName}}
   </div>
   <div>
-    <label><b>Email: </b></label> {{employee.emailId}}
+    <label><b>Email: </b></label> {{employee.email}}
+  </div>
+  <div>
+    <label><b>Phone: </b></label> {{employee.phone}}
+  </div>
+<!--  <div>-->
+<!--    <label><b>Tax Number: </b></label> {{employee.taxNumber}}-->
+<!--  </div>-->
+  <div>
+    <label><b>Employment Type: </b></label> {{employee.employmentType}}
+  </div>
+  <div>
+    <label><b>Department: </b></label> {{employee.department}}
+  </div>
+  <div>
+    <label><b>Role: </b></label> {{employee.role}}
   </div>
 </div>
 
 <br>
 <br>
-<button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
+
+<div style="text-align: center">
+  <button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
+</div>
