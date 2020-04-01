@@ -1,58 +1,129 @@
+<h3>Add New Employee</h3>
+
+<form [formGroup]="employeeService.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controls-container">
+        <input type="hidden" formControlName="id">
+        <mat-form-field>
+          <input formControlName="firstName" matInput placeholder="First Name*">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="lastName" matInput placeholder="Last Name*">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="email" matInput placeholder="Email*">
+          <mat-error *ngIf="employeeService.form.controls['email'].errors?.required">This field is required</mat-error>
+          <mat-error *ngIf="employeeService.form.controls['email'].errors?.email">Invalid email address</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="phone" matInput placeholder="Phone*">
+          <mat-error *ngIf="employeeService.form.controls['phone'].errors?.required">This field is required</mat-error>
+          <mat-error *ngIf="employeeService.form.controls['phone'].errors?.minlength">Minimum of 8 numbers required</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="controls-container">
+        <mat-form-field>
+          <input formControlName="taxNumber" matInput placeholder="Tax Number*">
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="employmentType" placeholder="Employment Type*">
+            <mat-option value="Permanent">Permanent</mat-option>
+            <mat-option value="Part Time">Part Time</mat-option>
+          </mat-select>
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="department" placeholder="Department*">
+            <mat-option value="IT">IT</mat-option>
+            <mat-option value="Finance">Finance</mat-option>
+            <mat-option value="HR">HR</mat-option>
+          </mat-select>
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select formControlName="role" placeholder="Role*">
+            <mat-option value="Software Developer">Software Developer</mat-option>
+            <mat-option value="Tech Support">Tech Support</mat-option>
+            <mat-option value="Database Admin">Database Admin</mat-option>
+            <mat-option value="Employee Support">Employee Support</mat-option>
+            <mat-option value="HR Manager">HR Manager</mat-option>
+            <mat-option value="HR Admin">HR Admin</mat-option>
+            <mat-option value="Financial Admin">Financial Admin</mat-option>
+            <mat-option value="Accountant">Accountant</mat-option>
+            <mat-option value="Business Analyst">Business Analyst</mat-option>
+          </mat-select>
+          <mat-error>This field is required</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="button-row">
+    <button mat-raised-button color="primary" type="submit" [disabled]="employeeService.form.invalid">Create</button>
+    <button mat-raised-button color="warn" (click)="clearForm()">Clear</button>
+  </div>
+</form>
+
 <!--<h3>Add New Employee</h3>-->
-<div [hidden]="submitted" style="width: 50%;">
-  <form (ngSubmit)="onSubmit()">
+<!--<div [hidden]="submitted" style="width: 50%;">-->
+<!--  <form (ngSubmit)="onSubmit()">-->
+
+<!--&lt;!&ndash;    <br>&ndash;&gt;-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="firstName">First Name</label>-->
+<!--      <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="lastName">Last Name</label>-->
+<!--      <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="email">Email</label>-->
+<!--      <input type="text" class="form-control" id="email" required [(ngModel)]="employee.email" name="email">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="phone">Phone Number</label>-->
+<!--      <input type="text" class="form-control" id="phone" required [(ngModel)]="employee.phone" name="phone">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="taxNumber">Tax Number</label>-->
+<!--      <input type="text" class="form-control" id="taxNumber" required [(ngModel)]="employee.taxNumber" name="taxNumber">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="employmentType">Employment Type</label>-->
+<!--      <input type="text" class="form-control" id="employmentType" required [(ngModel)]="employee.employmentType" name="employmentType">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="department">Department</label>-->
+<!--      <input type="text" class="form-control" id="department" required [(ngModel)]="employee.department" name="department">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="role">Role</label>-->
+<!--      <input type="text" class="form-control" id="role" required [(ngModel)]="employee.role" name="role">-->
+<!--    </div>-->
 
 <!--    <br>-->
 
-    <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
-    </div>
+<!--    <div class="form-group">-->
+<!--      <button type="submit" class="btn btn-success">Create</button>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
 
-    <div class="form-group">
-      <label for="lastName">Last Name</label>
-      <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" required [(ngModel)]="employee.email" name="email">
-    </div>
-
-    <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input type="text" class="form-control" id="phone" required [(ngModel)]="employee.phone" name="phone">
-    </div>
-
-    <div class="form-group">
-      <label for="taxNumber">Tax Number</label>
-      <input type="text" class="form-control" id="taxNumber" required [(ngModel)]="employee.taxNumber" name="taxNumber">
-    </div>
-
-    <div class="form-group">
-      <label for="employmentType">Employment Type</label>
-      <input type="text" class="form-control" id="employmentType" required [(ngModel)]="employee.employmentType" name="employmentType">
-    </div>
-
-    <div class="form-group">
-      <label for="department">Department</label>
-      <input type="text" class="form-control" id="department" required [(ngModel)]="employee.department" name="department">
-    </div>
-
-    <div class="form-group">
-      <label for="role">Role</label>
-      <input type="text" class="form-control" id="role" required [(ngModel)]="employee.role" name="role">
-    </div>
-
-    <br>
-
-    <div class="form-group">
-      <button type="submit" class="btn btn-success">Create</button>
-    </div>
-  </form>
-</div>
-
-<div [hidden]="!submitted">
-  <h4>You submitted successfully!</h4>
-  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
-</div>
+<!--<div [hidden]="!submitted">-->
+<!--  <h4>You submitted successfully!</h4>-->
+<!--  &lt;!&ndash; <button class="btn btn-success" (click)="newEmployee()">Add</button> &ndash;&gt;-->
+<!--</div>-->

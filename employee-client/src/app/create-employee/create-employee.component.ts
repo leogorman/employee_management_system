@@ -1,4 +1,5 @@
 import { EmployeeService } from '../employee.service';
+import { NotificationService } from '../notification.service';
 import { Employee } from '../employee';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -13,7 +14,7 @@ export class CreateEmployeeComponent implements OnInit {
   employee: Employee = new Employee();
   submitted = false;
 
-  constructor(private employeeService: EmployeeService,
+  constructor(public employeeService: EmployeeService, private notificationService: NotificationService,
               private router: Router) { }
 
   ngOnInit() {
@@ -25,23 +26,26 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   save() {
-    this.employeeService.createEmployee(this.employee)
+    this.employeeService.createEmployee(this.employeeService.form.value)
       .subscribe(data => console.log(data), error => console.log(error));
     this.employee = new Employee();
+    this.notificationService.success('Employee Created');
     this.gotoList();
   }
 
   onSubmit() {
-    this.submitted = true;
-    this.save();
-  }
-
-  redirectTo(uri: string){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-      this.router.navigate([uri]));
+    if (this.employeeService.form.valid) {
+      this.submitted = true;
+      this.save();
+    }
   }
 
   gotoList() {
-    this.redirectTo('/employees');
+    this.router.navigate(['/employees']);
+  }
+
+  clearForm(){
+    this.employeeService.form.reset();
+    this.employeeService.initailizeFormGroup();
   }
 }

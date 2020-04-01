@@ -1,3 +1,24 @@
-/*h3,.form-group{*/
-/*  text-align: center;*/
-/*}*/
+.normal-form{
+  margin: 10px;
+}
+
+.controls-container{
+  width: 100%;
+  padding: 5%;
+}
+
+.controls-container > * {
+  width: 100%;
+}
+
+h3{
+  text-align: center;
+}
+
+.button-row{
+  text-align: center;
+}
+
+.button-row button{
+  margin: 5px;
+}

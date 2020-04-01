@@ -36,3 +36,13 @@ mat-footer-row mat-footer-cell{
   width: 32px;
 }
 
+/* notification */
+snack-bar-container.success {
+  background-color: #5cb85c;
+  color : #fff;
+}
+
+snack-bar-container.notification simple-snack-bar{
+  font-size: 16px !important;
+  font-weight: bold;
+}
