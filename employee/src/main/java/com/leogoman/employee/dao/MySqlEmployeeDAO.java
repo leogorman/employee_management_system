@@ -5,10 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import sun.rmi.runtime.Log;
 
+import java.io.Console;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.logging.ConsoleHandler;
 
 @Repository("mysql")
 public class MySqlEmployeeDAO implements EmployeeDAO {
@@ -54,7 +57,7 @@ public class MySqlEmployeeDAO implements EmployeeDAO {
 
     @Override
     public void updateEmployee(Employee employee) {
-        final String sql = "UPDATE employees SET role = ?, employmentType = ?, taxNumber = ?, department = ?, phone = ?, email = ?, firstName = ?, lastName FROM employees WHERE id = ?";
+        final String sql = "UPDATE employees SET role = ?, employmentType = ?, taxNumber = ?, department = ?, phone = ?, email = ?, firstName = ?, lastName = ? WHERE id = ?";
         int id = employee.getId();
         jdbcTemplate.update(sql, employee.getRole(), employee.getEmploymentType(), employee.getTaxNumber(), employee.getDepartment(), employee.getPhone(), employee.getEmail(), employee.getFirstName(), employee.getLastName(), id);
     }

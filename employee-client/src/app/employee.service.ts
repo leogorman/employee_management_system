@@ -8,6 +8,7 @@ import {Employee} from './employee';
 })
 export class EmployeeService {
 
+  // private baseUrl = 'http://localhost:5000/employees';
   private baseUrl = 'http://employeeapi-env.eba-9ps5d6d5.ap-southeast-2.elasticbeanstalk.com/employees';
 
   constructor(private http: HttpClient) { }
@@ -20,8 +21,8 @@ export class EmployeeService {
     return this.http.post(`${this.baseUrl}`, employee);
   }
 
-  updateEmployee(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+  updateEmployee(employee: Object): Observable<Object> {
+    return this.http.put(`${this.baseUrl}`, employee);
   }
 
   deleteEmployee(id: number): Observable<any> {

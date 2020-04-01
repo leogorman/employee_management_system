@@ -36,7 +36,12 @@ export class CreateEmployeeComponent implements OnInit {
     this.save();
   }
 
+  redirectTo(uri: string){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+      this.router.navigate([uri]));
+  }
+
   gotoList() {
-    this.router.navigate(['/employees']);
+    this.redirectTo('/employees');
   }
 }

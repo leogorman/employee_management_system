@@ -1,6 +1,7 @@
 <h2 style="text-align: center">Employee Details</h2>
 
 <hr/>
+
 <div *ngIf="employee" style="text-align: center">
   <div>
     <label><b>First Name: </b></label> {{employee.firstName}}
@@ -32,5 +33,6 @@
 <br>
 
 <div style="text-align: center">
+  <button style="margin-right: 10px" (click)="updateInfo((employee.id))" class="btn btn-primary">Update Info</button>
   <button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
 </div>

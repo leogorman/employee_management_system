@@ -1,3 +1,14 @@
+<div class="search-div">
+<!--  <button mat-raised-button>-->
+<!--    <mat-icon>add</mat-icon>New Employee-->
+<!--  </button>-->
+  <mat-form-field class="search-form-field" floatLabel="never">
+    <input matInput [(ngModel)]="searchKey" placeholder="Search Employees" autocomplete="off" (keyup)="applyFilter()">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
 <div class="mat-elevation-z8">
   <mat-table [dataSource]="employees" matSort>
     <ng-container matColumnDef="firstName">
@@ -48,8 +59,9 @@
     <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayColumns" ></mat-row>
     <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':employees!=null}"></mat-footer-row>
-    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(employees!=null && employees.length==0)}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(employees!=null && employees.data.length==0)}"></mat-footer-row>
   </mat-table>
+  <mat-paginator [pageSizeOptions]="[5,10,25,50]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>
 <!--        <td>-->
 <!--          <button (click)="employeeDetails(employee.id)" class="btn btn-info" >Details</button>-->
