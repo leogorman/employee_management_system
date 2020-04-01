@@ -28,12 +28,12 @@ To Do:
 
 
 Screenshots:
-![](screenshots/sc2.PNG)
+![](screenshots/sc_1.PNG)
 View Employee List
 
-![](screenshots/sc1.PNG)
+![](screenshots/sc_2.PNG)
 Add New Employee
 
-![](screenshots/sc3.PNG)
+![](screenshots/sc_3.PNG)
 View/Edit Employee
 
