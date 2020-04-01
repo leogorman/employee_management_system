@@ -23,17 +23,19 @@ To Do:
 - ~~Sort employees by various fields~~
 - Add Angular Material design to create + update employee forms
 - Add form field restrictions when creating/updating new records
+- Make web app responsive for mobile view
 - Add departments dropdown, db table and link to employee table
 - Add user login + permissions system 
 
 
 Screenshots:
-![](screenshots/sc2.PNG)
+
+![](screenshots/sc_1.PNG)
 View Employee List
 
-![](screenshots/sc1.PNG)
+![](screenshots/sc_2.PNG)
 Add New Employee
 
-![](screenshots/sc3.PNG)
+![](screenshots/sc_3.PNG)
 View/Edit Employee
 
