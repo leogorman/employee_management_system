@@ -21,7 +21,7 @@ To Do:
 - ~~Auto refresh data when new employee created~~
 - ~~Search for employees by various field(name/employee id/department etc..)~~
 - ~~Sort employees by various fields~~
-- ~~~Add Angular Material design to create employee form~~
+- ~~Add Angular Material design to create employee form~~
 - ~~Add form field restrictions when creating/updating new records~~
 - Add Angular Material design to update employee form
 - Add Angular Material design to employee details page 
