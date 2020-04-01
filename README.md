@@ -1,5 +1,17 @@
 # Employee Management System
 
+AWS link: http://leogorman-employee-client.s3-website-ap-southeast-2.amazonaws.com/employees
+
+Developed via two seperate projects:
+- Angular 8 project for front end client
+- Spring boot project for back end API
+- CRUD style application where you can create/view/delete employees
+
+AWS Deployment:
+- Angular project deployed to AWS S3 Bucket
+- Spring project deployed to AWS Elastic Beanstalk
+- Spring API interacting with MySQL DB set up on AWS RDS 
+
 Screenshots:
 ![](screenshots/sc1.PNG)
 Add New Employee
@@ -10,25 +22,13 @@ View Employee List
 ![](screenshots/sc3.PNG)
 View/Edit Employee
 
-Developed via two seperate projects:
-- Angular 8 project for front end client
-- Spring boot project for back end api
-
-Technologies Used:
-- Angular 8 & Typescript
-- Spring Boot & Java
-
-To Run Locally:
-- Download both projects
-- Run spring boot project (employee) to start up localhost:8080 api and local h2 database
-- Run angular project (employee-client) to start up localhost:4200 front end client
-
 To Do:
-- Add additional fields to Employee model (image, dob, start date, department etc..)
+~~- Deploy to cloud platform (AWS/Heroku/Firebase) & update readme with new link~~ 
+~~Add additional fields to Employee model (start date, department etc..)~~
+~~- Add additional fields to employee profile ~~
+- Add ability to update employee details
 - Search for employees by name/employee id/department/email
-- Add image and additional fields to employee profile 
 - Sort employees by name/dob/id/department
-- Add email only restriction when creating new record
-- Add option to email employees through app
-- Deploy to cloud platform (AWS/Heroku/Firebase) & update readme with new link
+- Add form field restrictions when creating new record
+
 
