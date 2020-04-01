@@ -8,6 +8,11 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSortModule} from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,12 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

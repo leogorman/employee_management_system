@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71456ab3-fa78-4001-a60b-ed4c34e544ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/dao/EmployeeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/dao/MySqlEmployeeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/service/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../employee/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../employee/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/controller/EmployeeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/exception/ErrorDetails.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/exception/ResourceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/model/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../employee/src/main/java/com/leogoman/employee/repository/EmployeeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../employee/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../employee/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="71456ab3-fa78-4001-a60b-ed4c34e544ed" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +81,8 @@
       <option name="presentableId" value="Default" />
       <updated>1585392004537</updated>
       <workItem from="1585392007274" duration="4009000" />
-      <workItem from="1585629836238" duration="9108000" />
+      <workItem from="1585629836238" duration="9706000" />
+      <workItem from="1585707657416" duration="8036000" />
     </task>
     <servers />
   </component>
@@ -103,25 +90,33 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1585698988657">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom" timestamp="1585709267217">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585698988657" />
-    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1585698988656">
+    <state width="1259" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585709267217" />
+    <state width="1259" height="163" key="GridCell.Tab.0.center" timestamp="1585709267217">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585698988656" />
-    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1585698988656">
+    <state width="1259" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585709267217" />
+    <state width="1259" height="163" key="GridCell.Tab.0.left" timestamp="1585709267217">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585698988656" />
-    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1585698988656">
+    <state width="1259" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585709267217" />
+    <state width="1259" height="163" key="GridCell.Tab.0.right" timestamp="1585709267217">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585698988656" />
-    <state x="0" y="0" width="609" height="680" key="find.popup" timestamp="1585400050732">
+    <state width="1259" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585709267217" />
+    <state x="0" y="0" width="612" height="680" key="find.popup" timestamp="1585712443900">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" width="609" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1585400050732" />
+    <state x="0" y="0" width="612" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1585712443900" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1585711925346">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1585711925346" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1585708733815">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1585708733815" />
   </component>
 </project>

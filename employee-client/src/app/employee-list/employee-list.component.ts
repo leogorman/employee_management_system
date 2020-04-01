@@ -2,8 +2,10 @@ import { EmployeeDetailsComponent } from '../employee-details/employee-details.c
 import { Observable } from 'rxjs';
 import { EmployeeService } from '../employee.service';
 import { Employee } from '../employee';
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
+import { MatTableDataSource} from '@angular/material/table';
+import {MatSort} from '@angular/material/sort';
 
 @Component({
   selector: 'app-employee-list',
@@ -11,7 +13,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  employees: Observable<Employee[]>;
+  employees: Employee[] = [];
+  displayColumns: string[] = ['firstName', 'lastName', 'email', 'phone', 'employmentType', 'department', 'role', 'actions'];
+  @ViewChild(MatSort) sort: MatSort;
+
   constructor(private employeeService: EmployeeService,
               private router: Router) {}
 
@@ -20,7 +25,8 @@ export class EmployeeListComponent implements OnInit {
   }
 
   reloadData() {
-    this.employees = this.employeeService.getEmployeesList();
+    this.employeeService.getEmployeesList().subscribe(employees => this.employees = employees);
+    // this.employees.sort = this.sort;
   }
 
   deleteEmployee(id: number) {

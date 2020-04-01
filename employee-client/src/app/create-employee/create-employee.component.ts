@@ -37,6 +37,6 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/employees'], { queryParams: { refresh: true } });
+    this.router.navigate(['/employees']);
   }
 }

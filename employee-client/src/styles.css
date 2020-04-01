@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.hide{
+  display: none;
+}
+
+mat-footer-row mat-footer-cell{
+  justify-content: center;
+  font-style: italic;
+}
+
+/*mat-header-cell{*/
+/*  padding: 10px;*/
+/*  font-weight: bold;*/
+/*}*/
+
+/*mat-cell{*/
+/*  padding: 10px;*/
+/*}*/
+

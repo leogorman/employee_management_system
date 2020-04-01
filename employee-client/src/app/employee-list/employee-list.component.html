@@ -1,35 +1,57 @@
-<div class="panel panel-primary">
-  <div class="panel-body">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-<!--        <th>Tax Number</th>-->
-        <th>Employment Type</th>
-        <th>Department</th>
-        <th>Role</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let employee of employees | async">
-        <td>{{employee.firstName}}</td>
-        <td>{{employee.lastName}}</td>
-        <td>{{employee.email}}</td>
-        <td>{{employee.phone}}</td>
-<!--        <td>{{employee.taxNumber}}</td>-->
-        <td>{{employee.employmentType}}</td>
-        <td>{{employee.department}}</td>
-        <td>{{employee.role}}</td>
-        <td>
-          <button (click)="employeeDetails(employee.id)" class="btn btn-info" >Details</button>
-          <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="  margin-left: 10px">Delete</button>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="employees" matSort>
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>First Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.firstName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.lastName}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Phone</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.phone}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="employmentType">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Employment Type</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.employmentType}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="department">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Department</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.department}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="role">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Role</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.role}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button (click)="employeeDetails((element.id))" mat-icon-button><mat-icon>launch</mat-icon></button>
+        <button (click)="deleteEmployee((element.id))" mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="loading">
+      <mat-footer-cell *matFooterCellDef colspan="6">
+        Loading Data....
+      </mat-footer-cell>
+    </ng-container>
+    <ng-container matColumnDef="noData">
+      <mat-footer-cell *matFooterCellDef colspan="6">
+        No Data
+      </mat-footer-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayColumns" ></mat-row>
+    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':employees!=null}"></mat-footer-row>
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(employees!=null && employees.length==0)}"></mat-footer-row>
+  </mat-table>
 </div>
+<!--        <td>-->
+<!--          <button (click)="employeeDetails(employee.id)" class="btn btn-info" >Details</button>-->
+<!--          <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="  margin-left: 10px">Delete</button>-->
+<!--        </td>-->
