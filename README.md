@@ -17,12 +17,14 @@ To Do:
 - ~~Add additional fields to Employee model (start date, department etc..)~~
 - ~~Add additional fields to employee profile~~
 - ~~Add Angular Material design to project~~ 
-- Add ability to update employee details
-- Auto refresh data when new employee created
-- Search for employees by various field(name/employee id/department etc..)
-- Sort employees by various fields
-- Add form field restrictions when creating new record
-- Add user login system
+- ~~Add ability to update employee details~~
+- ~~Auto refresh data when new employee created~~
+- ~~Search for employees by various field(name/employee id/department etc..)~~
+- ~~Sort employees by various fields~~
+- Add Angular Material design to create + update employee forms
+- Add form field restrictions when creating/updating new records
+- Add departments dropdown, db table and link to employee table
+- Add user login + permissions system 
 
 
 Screenshots:
