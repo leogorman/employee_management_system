@@ -3,6 +3,7 @@ import { NotificationService } from '../notification.service';
 import { Employee } from '../employee';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-employee',
@@ -15,7 +16,7 @@ export class CreateEmployeeComponent implements OnInit {
   submitted = false;
 
   constructor(public employeeService: EmployeeService, private notificationService: NotificationService,
-              private router: Router) { }
+              private router: Router, private dialogRef: MatDialogRef<CreateEmployeeComponent>) { }
 
   ngOnInit() {
   }
@@ -25,7 +26,7 @@ export class CreateEmployeeComponent implements OnInit {
     this.employee = new Employee();
   }
 
-  save() {
+  create() {
     this.employeeService.createEmployee(this.employeeService.form.value)
       .subscribe(data => console.log(data), error => console.log(error));
     this.employee = new Employee();
@@ -33,10 +34,23 @@ export class CreateEmployeeComponent implements OnInit {
     this.gotoList();
   }
 
+  update() {
+    this.employeeService.updateEmployee(this.employeeService.form.value)
+      .subscribe(data => console.log(data), error => console.log(error));
+    this.employee = new Employee();
+    this.notificationService.success('Employee Updated');
+    this.gotoList();
+  }
+
   onSubmit() {
     if (this.employeeService.form.valid) {
       this.submitted = true;
-      this.save();
+      if (!this.employeeService.form.get('id').value){
+        this.create();
+      } else {
+        this.update();
+      }
+      this.onClose();
     }
   }
 
@@ -47,5 +61,11 @@ export class CreateEmployeeComponent implements OnInit {
   clearForm(){
     this.employeeService.form.reset();
     this.employeeService.initailizeFormGroup();
+  }
+
+  onClose(){
+    this.clearForm();
+    this.dialogRef.close();
+    location.reload();
   }
 }

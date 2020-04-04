@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {CreateEmployeeComponent} from '../create-employee/create-employee.component';
+import {NotificationService} from '../notification.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -11,15 +14,14 @@ import {MatPaginator} from '@angular/material/paginator';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  // employees: Employee[] = [];
   employees: MatTableDataSource<any>;
   displayColumns: string[] = ['firstName', 'lastName', 'email', 'phone', 'employmentType', 'department', 'role', 'actions'];
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   searchKey: string;
 
-  constructor(private employeeService: EmployeeService,
-              private router: Router) {}
+  constructor(private employeeService: EmployeeService, private notificationService: NotificationService,
+              private router: Router, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.reloadData();
@@ -47,16 +49,6 @@ export class EmployeeListComponent implements OnInit {
       });
   }
 
-  deleteEmployee(id: number) {
-    this.employeeService.deleteEmployee(id)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.reloadData();
-        },
-        error => console.log(error));
-  }
-
   employeeDetails(id: number){
     this.router.navigate(['details', id]);
   }
@@ -69,4 +61,36 @@ export class EmployeeListComponent implements OnInit {
   applyFilter(){
     this.employees.filter = this.searchKey.trim().toLowerCase();
   }
+
+  onCreate(){
+    this.employeeService.initailizeFormGroup();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '600px';
+    this.dialog.open(CreateEmployeeComponent, dialogConfig);
+  }
+
+  onUpdate(row){
+    this.employeeService.populateForm(row);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '600px';
+    this.dialog.open(CreateEmployeeComponent, dialogConfig);
+  }
+
+  onDelete(id: number) {
+    if (confirm('Are you sure you want to delete this employee?')) {
+      this.employeeService.deleteEmployee(id)
+        .subscribe(
+          data => {
+            console.log(data);
+            this.reloadData();
+          },
+          error => console.log(error));
+      this.notificationService.success('Employee successfully deleted');
+    }
+  }
+
 }

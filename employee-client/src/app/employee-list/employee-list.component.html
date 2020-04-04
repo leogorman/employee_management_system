@@ -1,7 +1,7 @@
 <div class="search-div">
-<!--  <button mat-raised-button>-->
-<!--    <mat-icon>add</mat-icon>New Employee-->
-<!--  </button>-->
+  <button mat-raised-button (click)="onCreate() ">
+    <mat-icon>add</mat-icon>New Employee
+  </button>
   <mat-form-field class="search-form-field" floatLabel="never">
     <input matInput [(ngModel)]="searchKey" placeholder="Search Employees" autocomplete="off" (keyup)="applyFilter()">
     <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
@@ -41,9 +41,9 @@
     </ng-container>
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <button (click)="employeeDetails((element.id))" mat-icon-button><mat-icon>launch</mat-icon></button>
-        <button (click)="deleteEmployee((element.id))" mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
+      <mat-cell *matCellDef="let row">
+        <button (click)="onUpdate((row))" mat-icon-button><mat-icon>launch</mat-icon></button>
+        <button (click)="onDelete((row.id))" mat-icon-button color="warn"><mat-icon>delete_outline</mat-icon></button>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="loading">

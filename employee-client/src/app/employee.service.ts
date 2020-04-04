@@ -60,4 +60,8 @@ export class EmployeeService {
   getEmployeesList() {
     return this.http.get<Employee[]>(`${this.baseUrl}`);
   }
+
+  populateForm(employee){
+    this.form.setValue(employee);
+  }
 }
