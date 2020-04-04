@@ -49,6 +49,7 @@ snack-bar-container.notification simple-snack-bar{
 
 /* for dialog pop-up */
 .btn-dialog-close{
+  float: right;
   width: 45px;
   min-width: 0 !important;
   height: 40px;
