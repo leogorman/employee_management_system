@@ -1,7 +1,6 @@
 # Employee Management System
 
 CRUD style application where you can create/view/delete employees
-- AWS link: http://leogorman-employee-client.s3-website-ap-southeast-2.amazonaws.com/employees
 
 Developed via two seperate projects:
 - Angular 8 project for front end client
