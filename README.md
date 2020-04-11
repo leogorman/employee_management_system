@@ -22,7 +22,7 @@ To Do:
 - ~~Sort employees by various fields~~
 - ~~Add Angular Material design to create employee form~~
 - ~~Add form field restrictions when creating/updating new records~~
-- ~~Add Angular Material design to update employee form + employee details page ~~
+- ~~Add Angular Material design to update employee form + employee details page~~
 - Make web app responsive for mobile view
 - Add departments dropdown, db table and link to employee table
 - Add user login + permissions system 
